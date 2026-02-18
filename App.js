@@ -371,11 +371,26 @@ const styles = {
     fontSize: '15px',
     lineHeight: '1.6',
     color: '#a89880'
+  },
+
+  // Footer
+  footer: {
+    marginTop: '40px',
+    paddingTop: '20px',
+    paddingBottom: '100px',
+    borderTop: '1px solid rgba(139, 0, 0, 0.2)',
+    textAlign: 'center',
+    fontSize: '12px',
+    color: '#555'
+  },
+  footerLink: {
+    color: '#8b4040',
+    textDecoration: 'none',
+    margin: '0 8px'
   }
 };
 
 // ============ INTELLIGENCE DATABASE ============
-// Enhanced with psychology explanations and specific actions
 
 const intel = {
   
@@ -522,8 +537,8 @@ const intel = {
   },
   
   telecoms: {
-    name: "mobile phones & broadband",
-    triggers: ['phone', 'mobile', 'contract', 'upgrade', 'ee', 'vodafone', 'three', 'o2', 'broadband', 'wifi', 'bt', 'virgin media', 'sky broadband', 'sim'],
+    name: "mobile phones & contracts",
+    triggers: ['phone', 'mobile', 'contract', 'upgrade', 'ee', 'vodafone', 'three', 'o2', 'sim', 'mobile contract', 'phone bill', 'phone plan'],
     
     theyKnow: [
       "You'll pay for a 'free' phone for years after it's paid off — most people don't notice when the handset cost ends",
@@ -1217,7 +1232,148 @@ const intel = {
       }
     ],
     tipCount: 4
+  },
+
+  // ============ V2: THREE NEW TOPICS ============
+
+  broadband: {
+    name: "broadband deals",
+    triggers: ['broadband', 'bt broadband', 'sky broadband', 'virgin media', 'talktalk', 'openreach', 'fibre broadband', 'broadband deal', 'broadband contract', 'broadband provider', 'internet provider', 'home broadband', 'wifi contract'],
+    
+    theyKnow: [
+      "Your contract end date — the price increase is automatic, and they're counting on you not acting",
+      "If you've never switched, they flag you as low churn risk and make their retention offer accordingly",
+      "The more services bundled together, the less likely you are to switch — each addition raises your threshold for leaving"
+    ],
+    
+    theyUseIt: [
+      "Introductory prices are real and competitive — then automatically rise 30-50% when the deal expires",
+      "'Up to' speeds only need to be delivered to 50% of customers — the other half pay the same for less",
+      "Mid-contract price rises (CPI + 3.9%) add £4-6/month by contract end — this was in the small print"
+    ],
+    
+    theTrap: [
+      "Out-of-contract customers overpay by £120-240 per year compared with what the same provider is offering new customers right now",
+      "Most providers use the same Openreach infrastructure — what differs is only the price, set by their assessment of your likelihood to leave"
+    ],
+    
+    firstTip: "Check what your provider currently offers new customers for your speed. The gap between that price and yours is the loyalty penalty.",
+    
+    psychology: "This exploits 'inertia bias' combined with 'status quo bias' — the preference for maintaining current arrangements even when better options exist. Switching broadband requires effort: comparing deals, contacting a new provider, coordinating changeover. Each step is small; collectively they form a friction barrier the provider has deliberately not reduced. 'Present bias' ensures the immediate hassle feels larger than the deferred saving. What makes this particularly systematic: the Openreach network means most providers deliver literally the same service over the same cables. What differs is only the price, set by their assessment of how likely you are to leave.",
+    
+    moreTips: [
+      {
+        tip: "Call the retention team — not customer service — with a competitor quote in hand",
+        action: "Check uswitch.com or broadband.co.uk for the cheapest equivalent deal at your postcode. Then call your provider and ask specifically for 'retentions' or 'disconnection'. Say: 'I've been quoted £X by [competitor] for the same speed. Match it or I'll switch today.' They have a budget. Use it."
+      },
+      {
+        tip: "Know your contract end date — that's when you have maximum leverage",
+        action: "Check your broadband agreement or last bill for the contract end date. Set a calendar reminder one month before. That's when comparison sites show best new-customer prices and your provider most wants to keep you."
+      },
+      {
+        tip: "Run a speed test — consistently below minimum guaranteed means you can exit penalty-free",
+        action: "Go to speedtest.net. Connect via ethernet (not Wi-Fi) and test at several times of day. If consistently below your minimum guaranteed speed, email your provider: 'My speed is consistently below the minimum guaranteed in my contract. I'd like to exit without penalty.' Ofcom backs this right."
+      },
+      {
+        tip: "Unbundle and price each service separately — the bundle 'discount' often isn't one",
+        action: "If you have broadband, TV, mobile, and landline bundled: price each separately from best-of-market providers. Add them up. Compare to your bundle total. You may find you're paying more for the 'discounted' bundle than you would for individual best deals."
+      }
+    ],
+    tipCount: 4
+  },
+
+  education: {
+    name: "online courses & education",
+    triggers: ['online course', 'course', 'udemy', 'coursera', 'skillshare', 'masterclass', 'bootcamp', 'certification', 'upskilling', 'e-learning', 'webinar', 'free masterclass', 'invest in yourself'],
+    
+    theyKnow: [
+      "Your professional insecurity is real — 'upskilling' language positions standing still as falling behind, the urgency is manufactured while the anxiety is genuine",
+      "Most people won't finish the course — and when they don't, they blame themselves rather than the product, so no refund is sought and the next course is purchased with renewed determination",
+      "Many 'certifications' are self-issued by the platform selling them and carry no weight with employers — the industry relies on you assuming otherwise"
+    ],
+    
+    theyUseIt: [
+      "The 'free masterclass' is not education — it's a sales environment: 90 minutes of partial content ending with a time-limited offer at the moment your commitment is highest",
+      "Testimonials feature the top percentile of completers as if they were typical — the 80-95% who enrolled, quit, and achieved nothing are invisible",
+      "Countdown timers and 'only 12 seats remaining' are standard tactics — the same 'limited' offer is recycled in the next cohort at the same or higher price"
+    ],
+    
+    theTrap: [
+      "Paid online course completion rates average 20-30% — the majority of customers pay for a product they never finish, then blame themselves for the failure",
+      "A £2,000 course with 40 hours of content costs £50 per hour of instruction — a textbook on the same subject costs £30-40 total and often covers more ground with greater rigour"
+    ],
+    
+    firstTip: "Before enrolling, search the specific credential on job listings in your field. Count how many employers mention it. If the answer is near zero, the credential is decorative.",
+    
+    psychology: "This exploits 'aspiration gap marketing' — targeting the permanent gap between who you are and who you want to be. The education industry positions its products as bridges across this gap, but the gap is existential, not commercial. No purchase closes it permanently. Each course that fails to transform you generates demand for the next product. This is compounded by 'completion guilt': the industry knows most people won't finish, and that non-completers blame themselves rather than the product. That self-attribution is the load-bearing wall of the business model. A consumer who blamed the product would switch; a consumer who blames themselves buys more and tries harder.",
+    
+    moreTips: [
+      {
+        tip: "Ask the provider for completion rate and outcome data before paying",
+        action: "Email: 'What percentage of enrolled students complete this course? Of those, what percentage achieve the stated career outcome within twelve months?' Any provider that cannot or will not answer is selling hope, not outcomes. The refusal itself is the answer."
+      },
+      {
+        tip: "Apply a 72-hour cooling-off rule to any course purchase triggered by a webinar or countdown",
+        action: "Close the page. Wait three days. If you still want to enrol, the learning value is real. If the urgency has faded, it was the funnel talking. Legitimate educational value does not expire at midnight."
+      },
+      {
+        tip: "Compare hourly cost to free alternatives before paying",
+        action: "Calculate: course price ÷ hours of content = cost per hour. Then check: MIT OpenCourseWare, YouTube university channels, library textbooks. A £40 textbook often covers more than a £500 course. The course format is better marketed, not better taught."
+      },
+      {
+        tip: "Separate learning from credentialing — they require different purchases",
+        action: "If you want a skill: books, free resources, and practice are usually most effective. If you want a credential: verify it carries weight with specific employers before paying. Search '[credential name] site:indeed.com' or in LinkedIn job listings to see whether real employers mention it."
+      }
+    ],
+    tipCount: 4
+  },
+
+  upf: {
+    name: "ultra-processed food",
+    triggers: ['ultra-processed', 'upf', 'processed food', 'junk food', 'crisps', 'snacks', 'biscuits', 'ready meals', 'cereal', 'bliss point', 'food engineering'],
+    
+    theyKnow: [
+      "Your brain evolved to seek sugar, fat, and salt because they were historically scarce — the reward system that kept your ancestors alive was never designed for an environment where engineered combinations are unlimited, cheap, and on every shelf",
+      "There is a 15-20 minute gap between eating and the brain receiving fullness signals — ultra-processed food is engineered for rapid consumption, ensuring substantial calories are ingested before the signal arrives",
+      "When you overeat their product, you blame your willpower — that self-attribution is the load-bearing wall of the entire business model"
+    ],
+    
+    theyUseIt: [
+      "The 'bliss point' — the precise combination of sugar, fat, and salt that maximises pleasure without triggering satiety — is a standard industry methodology, found through testing and built into every product",
+      "Vanishing caloric density: crisps and puffed snacks are engineered to dissolve rapidly in the mouth, so the brain registers the pleasure but underregisters the calories",
+      "Fibre and protein, which slow eating and promote fullness, are systematically removed — replaced with refined carbohydrates that are cheap, stable, fast to consume, and do not satisfy"
+    ],
+    
+    theTrap: [
+      "An NIH clinical trial found participants on ultra-processed diets consumed around 500 extra calories per day compared to matched unprocessed diets — not because of weaker willpower, but because the products defeated their regulatory systems",
+      "Ultra-processed food constitutes over 50% of the average UK adult diet — and the NHS spends an estimated £6.5 billion annually on obesity-related conditions linked to it"
+    ],
+    
+    firstTip: "Pay attention to how fast the food disappears. Speed is not a coincidence — it's a design specification. Slow food gives your satiety signals time to work.",
+    
+    psychology: "This exploits 'reward circuit hijacking' combined with 'self-attribution bias'. Food science isolated the combinations that produce the strongest dopamine response with the least satiety — not maximising pleasure alone, but maximising repeatability, the ability to trigger desire again and again without triggering satisfaction. Three formulas reliably override appetite regulation: fat + sodium, fat + sugar, and carbohydrates + sodium. These are rare in nature but standard in manufacturing. Then the self-attribution mechanism completes the system: cultural framing ('individual portions', calorie counts, 'balanced diet' messaging) ensures you blame your willpower rather than the product's design. A consumer who blamed the product would stop buying. A consumer who blames themselves tries harder.",
+    
+    moreTips: [
+      {
+        tip: "Read the first three ingredients on every packaged food — they reveal what the product actually is",
+        action: "The ingredients list is legally required to be in descending order of weight. If the first three are sugar, oil, or refined flour variants, the product is engineered for palatability, not nourishment. Ignore the front of the packet. The back is the only honest part."
+      },
+      {
+        tip: "Check 'of which sugars' against total carbohydrates — 'healthy' packaging often fails this test",
+        action: "On the nutrition label, find 'Carbohydrates' and 'of which sugars'. If sugars are more than half the total carbohydrates, it's closer to confectionery than food. Many 'high protein' cereals, yoghurts, and snack bars fail this immediately."
+      },
+      {
+        tip: "Replace one ultra-processed meal per week with an unprocessed equivalent — and track how long fullness lasts",
+        action: "Swap one ready meal or packaged snack for a whole-food equivalent this week. Porridge (oats + water) vs processed cereal of equivalent calories. Notice how many hours pass before hunger returns. The comparison is usually dramatic and requires no willpower to interpret."
+      },
+      {
+        tip: "Stop blaming yourself for cravings — the craving is their product specification, not your weakness",
+        action: "When you reach for a specific product unexpectedly, recognise: this is an engineered dopamine response, not a failure of discipline. Naming it accurately doesn't eliminate the craving but it removes the guilt loop — guilt → restriction → craving → consumption → guilt — that keeps you buying more."
+      }
+    ],
+    tipCount: 4
   }
+
 };
 
 // ============ APP COMPONENT ============
@@ -1319,13 +1475,11 @@ const HackedOffApp = () => {
   };
   
   const handleUnlockSingle = (domain) => {
-    // In real app, this would trigger payment flow for £1.99
-    setUnlockedTopics(prev => new Set([...prev, domain]));
+    window.open('https://buy.stripe.com/28E7sKft526mgMT0Y51gs00', '_blank');
   };
   
   const handleUnlockAll = () => {
-    // In real app, this would trigger payment flow for £4.99
-    setAllUnlocked(true);
+    window.open('https://buy.stripe.com/00w7sK2Gj26mcwDgX31gs01', '_blank');
   };
   
   const isTopicUnlocked = (domain) => {
@@ -1350,7 +1504,10 @@ const HackedOffApp = () => {
     { label: "Funeral", trigger: "funeral" },
     { label: "Kids", trigger: "baby" },
     { label: "Pets", trigger: "vet" },
-    { label: "Scams", trigger: "scam" }
+    { label: "Scams", trigger: "scam" },
+    { label: "Broadband", trigger: "broadband" },
+    { label: "Education", trigger: "online course" },
+    { label: "UPF", trigger: "ultra-processed" }
   ];
   
   const showDomainPills = !isThinking && (
@@ -1468,7 +1625,7 @@ const HackedOffApp = () => {
                 </button>
               </div>
               <div style={styles.paywallPrice}>
-                One-time payment • Lifetime access • No subscription
+                One-time payment · Lifetime access · No subscription
               </div>
             </div>
           )}
@@ -1532,8 +1689,6 @@ const HackedOffApp = () => {
     ))}</div>;
   };
   
-  // Header image URL - using a placeholder that matches the dark/red theme
-  // In production, replace with actual hosted image
   const headerImageUrl = "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=400&fit=crop&auto=format";
   
   return (
@@ -1584,6 +1739,15 @@ const HackedOffApp = () => {
           )}
           
           <div ref={messagesEndRef} />
+        </div>
+
+        {/* Footer */}
+        <div style={styles.footer}>
+          <a href="https://feelinghackedoff.substack.com" style={styles.footerLink} target="_blank" rel="noopener noreferrer">Newsletter</a>
+          <span style={{color: '#333'}}>·</span>
+          <a href="#" style={styles.footerLink}>Privacy</a>
+          <span style={{color: '#333'}}>·</span>
+          <a href="#" style={styles.footerLink}>Terms</a>
         </div>
       </div>
       
